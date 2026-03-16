@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<title>Calculator cost combustibil</title>
+<meta name="description" content="Calculează costul combustibilului pentru o distanță.">
+<style>
+body{font-family:Arial;margin:40px;background:#f4f4f4}
+.box{background:white;padding:20px;border-radius:10px;max-width:700px;margin:auto;box-shadow:0 0 10px rgba(0,0,0,0.1)}
+input,button{padding:8px;margin-top:5px}
+.result{margin-top:10px;font-weight:bold}
+a{display:block;margin-top:10px}
+</style>
+</head>
+<body>
+<div class="box">
+<h1>Calculator cost combustibil</h1>
+<p>Calculează costul combustibilului pentru o distanță.</p>
+<input id="val" type="number" placeholder="Introdu valoare">
+<button onclick="calc()">Calculează</button>
+<div class="result" id="rez"></div>
+</div>
+
+<script>
+function calc(){
+let v=document.getElementById("val").value; document.getElementById("rez").innerHTML="Cost estimat: "+(v*0.15).toFixed(2);
+}
+</script>
+</body>
+</html>

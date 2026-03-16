@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<title>Calculator TVA Serbia</title>
+<meta name="description" content="Calculator TVA pentru Serbia. Introdu suma și vezi TVA estimat.">
+<style>
+body{font-family:Arial;margin:40px;background:#f4f4f4}
+.box{background:white;padding:20px;border-radius:10px;max-width:700px;margin:auto;box-shadow:0 0 10px rgba(0,0,0,0.1)}
+input,button{padding:8px;margin-top:5px}
+.result{margin-top:10px;font-weight:bold}
+a{display:block;margin-top:10px}
+</style>
+</head>
+<body>
+<div class="box">
+<h1>Calculator TVA Serbia</h1>
+<p>Calculator TVA pentru Serbia. Introdu suma și vezi TVA estimat.</p>
+<input id="val" type="number" placeholder="Introdu valoare">
+<button onclick="calc()">Calculează</button>
+<div class="result" id="rez"></div>
+</div>
+
+<script>
+function calc(){
+let v=document.getElementById("val").value; let t=v*0.19; document.getElementById("rez").innerHTML="TVA estimat: "+t.toFixed(2);
+}
+</script>
+</body>
+</html>
