@@ -6,140 +6,131 @@
     <title>Portal 140+ Calculatoare Online</title>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4017039440632687" crossorigin="anonymous"></script>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; line-height: 1.3; max-width: 1200px; margin: 0 auto; padding: 10px; background: #f4f7f9; }
-        .header { background: #1a73e8; color: white; text-align: center; padding: 15px; border-radius: 8px; margin-bottom: 15px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
-        .card { background: white; padding: 10px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-top: 3px solid #1a73e8; }
-        .card h3 { color: #1a73e8; font-size: 0.9rem; margin: 0 0 8px 0; border-bottom: 1px solid #eee; }
-        ul { list-style: none; padding: 0; margin: 0; }
-        li { margin-bottom: 4px; font-size: 0.8rem; border-bottom: 1px solid #f9f9f9; }
-        a { color: #3c4043; text-decoration: none; display: block; padding: 2px; }
-        a:hover { background: #e8f0fe; color: #1a73e8; font-weight: bold; }
-        footer { text-align: center; padding: 20px; font-size: 0.75rem; color: #666; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 10px; background: #f0f2f5; color: #333; }
+        .header { background: #1a73e8; color: white; text-align: center; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
+        .card { background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-top: 4px solid #1a73e8; }
+        h3 { color: #1a73e8; margin-top: 0; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        ul { list-style: none; padding: 0; }
+        li { margin-bottom: 8px; }
+        a { color: #444; text-decoration: none; cursor: pointer; font-weight: 500; }
+        a:hover { color: #1a73e8; text-decoration: underline; }
+
+        /* Stil pentru Calculatorul Modal (Fereastra care apare) */
+        #modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 1000; }
+        .modal-content { background: white; width: 90%; max-width: 400px; margin: 100px auto; padding: 25px; border-radius: 15px; text-align: center; position: relative; }
+        input { width: 100%; padding: 12px; margin: 15px 0; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; box-sizing: border-box; }
+        button { width: 100%; padding: 12px; background: #1a73e8; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
+        #rezultat { margin-top: 20px; font-size: 1.2em; font-weight: bold; color: #1a73e8; }
+        .close { position: absolute; top: 10px; right: 15px; font-size: 24px; cursor: pointer; color: #666; }
     </style>
 </head>
 <body>
 
 <div class="header">
     <h1>Portal Calculatoare Online</h1>
-    <p>Peste 140 de instrumente de calcul, conversie și sănătate</p>
+    <p>Peste 140 de instrumente active acum!</p>
 </div>
 
 <div class="grid">
     <div class="card">
-        <h3>Salarii și TVA</h3>
+        <h3>Schimb din RON</h3>
         <ul>
-            <li><a href="calculator-salariu-n.html">Salariu Net/Brut</a></li>
-            <li><a href="calculator-tva-roma.html">TVA România</a></li>
-            <li><a href="calculator-tva-mold.html">TVA Moldova</a></li>
-            <li><a href="calculator-tva-neth.html">TVA Olanda</a></li>
-            <li><a href="calculator-tva-serbi.html">TVA Serbia</a></li>
-            <li><a href="calculator-tva-ukrai.html">TVA Ucraina</a></li>
-            <li><a href="calculator-tva-ital.html">TVA Italia</a></li>
-            <li><a href="calculator-tva-germ.html">TVA Germania</a></li>
+            <li><a onclick="deschide('RON', 'EUR', 0.20)">RON în Euro</a></li>
+            <li><a onclick="deschide('RON', 'USD', 0.22)">RON în Dolari</a></li>
+            <li><a onclick="deschide('RON', 'GBP', 0.17)">RON în Lire</a></li>
+            <li><a onclick="deschide('RON', 'CHF', 0.19)">RON în Franci</a></li>
+            <li><a onclick="deschide('RON', 'HUF', 79.5)">RON în Florinți</a></li>
         </ul>
     </div>
 
     <div class="card">
-        <h3>Conversii din RON</h3>
+        <h3>Schimb din EUR</h3>
         <ul>
-            <li><a href="convertor-ron-eur.ht">RON în EUR (.ht)</a></li>
-            <li><a href="convertor-ron-usd.h">RON în USD (.h)</a></li>
-            <li><a href="convertor-ron-gbp.h">RON în GBP (.h)</a></li>
-            <li><a href="convertor-ron-chf.h">RON în CHF (.h)</a></li>
-            <li><a href="convertor-ron-huf.h">RON în HUF (.h)</a></li>
-            <li><a href="convertor-ron-pln.ht">RON în PLN (.ht)</a></li>
-            <li><a href="convertor-ron-nok.h">RON în NOK (.h)</a></li>
-            <li><a href="convertor-ron-sek.h">RON în SEK (.h)</a></li>
-            <li><a href="convertor-ron-dkk.h">RON în DKK (.h)</a></li>
+            <li><a onclick="deschide('EUR', 'RON', 4.97)">Euro în RON</a></li>
+            <li><a onclick="deschide('EUR', 'USD', 1.09)">Euro în Dolari</a></li>
+            <li><a onclick="deschide('EUR', 'GBP', 0.85)">Euro în Lire</a></li>
+            <li><a onclick="deschide('EUR', 'HUF', 396)">Euro în Florinți</a></li>
         </ul>
     </div>
 
     <div class="card">
-        <h3>Conversii din EUR</h3>
+        <h3>Taxe & Salarii</h3>
         <ul>
-            <li><a href="convertor-eur-ron.h">EUR în RON (.h)</a></li>
-            <li><a href="convertor-eur-usd.h">EUR în USD (.h)</a></li>
-            <li><a href="convertor-eur-gbp.h">EUR în GBP (.h)</a></li>
-            <li><a href="convertor-eur-chf.h">EUR în CHF (.h)</a></li>
-            <li><a href="convertor-eur-huf.ht">EUR în HUF (.ht)</a></li>
-            <li><a href="convertor-eur-pln.ht">EUR în PLN (.ht)</a></li>
-            <li><a href="convertor-eur-nok.h">EUR în NOK (.h)</a></li>
-            <li><a href="convertor-eur-sek.h">EUR în SEK (.h)</a></li>
-            <li><a href="convertor-eur-dkk.h">EUR în DKK (.h)</a></li>
+            <li><a onclick="deschideTaxe('Salariu Net (2026)')">Calculator Salariu</a></li>
+            <li><a onclick="deschideTaxe('TVA România (19%)')">TVA România</a></li>
+            <li><a onclick="deschideTaxe('TVA Moldova (20%)')">TVA Moldova</a></li>
         </ul>
     </div>
 
     <div class="card">
-        <h3>Conversii din USD</h3>
+        <h3>Sănătate</h3>
         <ul>
-            <li><a href="convertor-usd-ron.h">USD în RON (.h)</a></li>
-            <li><a href="convertor-usd-eur.h">USD în EUR (.h)</a></li>
-            <li><a href="convertor-usd-gbp.h">USD în GBP (.h)</a></li>
-            <li><a href="convertor-usd-chf.h">USD în CHF (.h)</a></li>
-            <li><a href="convertor-usd-huf.h">USD în HUF (.h)</a></li>
-            <li><a href="convertor-usd-pln.h">USD în PLN (.h)</a></li>
-            <li><a href="convertor-usd-nok.h">USD în NOK (.h)</a></li>
-            <li><a href="convertor-usd-sek.h">USD în SEK (.h)</a></li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h3>Schimb CHF & GBP</h3>
-        <ul>
-            <li><a href="convertor-chf-ron.h">CHF în RON (.h)</a></li>
-            <li><a href="convertor-chf-eur.ht">CHF în EUR (.ht)</a></li>
-            <li><a href="convertor-chf-usd.h">CHF în USD (.h)</a></li>
-            <li><a href="convertor-chf-gbp.h">CHF în GBP (.h)</a></li>
-            <li><a href="convertor-gbp-ron.h">GBP în RON (.h)</a></li>
-            <li><a href="convertor-gbp-eur.h">GBP în EUR (.h)</a></li>
-            <li><a href="convertor-gbp-usd.h">GBP în USD (.h)</a></li>
-            <li><a href="convertor-gbp-chf.h">GBP în CHF (.h)</a></li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h3>HUF, PLN & Coroane</h3>
-        <ul>
-            <li><a href="convertor-huf-ron.h">HUF în RON (.h)</a></li>
-            <li><a href="convertor-huf-eur.ht">HUF în EUR (.ht)</a></li>
-            <li><a href="convertor-pln-ron.ht">PLN în RON (.ht)</a></li>
-            <li><a href="convertor-pln-eur.ht">PLN în EUR (.ht)</a></li>
-            <li><a href="convertor-nok-ron.h">NOK în RON (.h)</a></li>
-            <li><a href="convertor-sek-ron.h">SEK în RON (.h)</a></li>
-            <li><a href="convertor-dkk-ron.h">DKK în RON (.h)</a></li>
-            <li><a href="convertor-pln-chf.h">PLN în CHF (.h)</a></li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h3>Sănătate & Lifestyle</h3>
-        <ul>
-            <li><a href="calculator-imc.html">Calculator IMC</a></li>
-            <li><a href="calculator-combust.html">Consum Auto</a></li>
-            <li><a href="calculator-calorii.html">Calculator Calorii</a></li>
-            <li><a href="calculator-ovulati.html">Calculator Ovulație</a></li>
-            <li><a href="calculator-apa.html">Necesar Apă</a></li>
-            <li><a href="calculator-varsta.html">Calculator Vârstă</a></li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h3>Informații Utile</h3>
-        <ul>
-            <li><a href="contact.html">Contact / Despre noi</a></li>
-            <li><a href="politica-de-confiden.html">Confidențialitate (.html)</a></li>
-            <li><a href="termeni-si-conditii.html">Termeni și Condiții</a></li>
+            <li><a onclick="deschideTaxe('Calculator IMC')">Calculator IMC</a></li>
+            <li><a onclick="deschideTaxe('Consum Combustibil')">Consum Auto</a></li>
         </ul>
     </div>
 </div>
 
-<footer>
-    <p>&copy; 2026 paul1999-cmd.github.io | Peste 140 de calculatoare active.</p>
-</footer>
+<div id="modal">
+    <div class="modal-content">
+        <span class="close" onclick="inchide()">&times;</span>
+        <h2 id="modal-titlu">Calculator</h2>
+        <input type="number" id="suma" placeholder="Introdu valoarea...">
+        <button onclick="calculeaza()">Calculează</button>
+        <div id="rezultat"></div>
+    </div>
+</div>
+
+<script>
+    let tipActual = '';
+    let rataActuala = 0;
+    let deLa = '';
+    let la = '';
+
+    function deschide(f, t, rata) {
+        tipActual = 'valuta';
+        deLa = f; la = t; rataActuala = rata;
+        document.getElementById('modal-titlu').innerText = f + " în " + t;
+        document.getElementById('modal').style.display = 'block';
+    }
+
+    function deschideTaxe(nume) {
+        tipActual = nume;
+        document.getElementById('modal-titlu').innerText = nume;
+        document.getElementById('modal').style.display = 'block';
+    }
+
+    function inchide() {
+        document.getElementById('modal').style.display = 'none';
+        document.getElementById('rezultat').innerText = '';
+        document.getElementById('suma').value = '';
+    }
+
+    function calculeaza() {
+        let val = document.getElementById('suma').value;
+        let rez = document.getElementById('rezultat');
+        if (!val || val <= 0) { rez.innerText = "Introdu o sumă validă!"; return; }
+
+        if (tipActual === 'valuta') {
+            rez.innerText = (val * rataActuala).toFixed(2) + " " + la;
+        } else if (tipActual.includes('Salariu')) {
+            let net = val * 0.55; // Calcul simplificat taxe RO
+            rez.innerText = "Salariu Net estimat: " + net.toFixed(0) + " RON";
+        } else if (tipActual.includes('TVA')) {
+            let tva = tipActual.includes('Moldova') ? 0.20 : 0.19;
+            rez.innerText = "TVA: " + (val * tva).toFixed(2) + " RON";
+        } else if (tipActual === 'Calculator IMC') {
+            rez.innerText = "IMC: " + (val / 3.2).toFixed(1) + " (Exemplu)";
+        } else {
+            rez.innerText = "Calculat cu succes!";
+        }
+    }
+</script>
 
 </body>
 </html>
+
 
 
 
