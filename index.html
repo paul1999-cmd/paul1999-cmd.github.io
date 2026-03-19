@@ -3,30 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mega Portal Calculatoare Online - 30 Instrumente Gratuite</title>
+    <title>UniCalc Pro - 45+ Calculatoare Online Gratuite</title>
     <style>
-        :root { --p: #2563eb; --s: #64748b; --bg: #f8fafc; --white: #ffffff; }
-        body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); margin: 0; padding: 10px; color: #1e293b; }
-        .wrapper { max-width: 1100px; margin: 0 auto; }
-        header { text-align: center; padding: 30px 10px; background: var(--white); border-radius: 20px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        :root { --p: #1e40af; --s: #64748b; --bg: #f1f5f9; --w: #ffffff; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); margin: 0; padding: 10px; color: #1e293b; line-height: 1.4; }
+        .wrapper { max-width: 1200px; margin: 0 auto; }
+        header { text-align: center; padding: 30px 10px; background: var(--w); border-radius: 20px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
         
-        .nav-container { background: var(--white); padding: 15px; border-radius: 20px; margin-bottom: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        .nav-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 8px; }
-        .nav-grid button { padding: 10px 5px; border: 1px solid #e2e8f0; background: none; border-radius: 10px; cursor: pointer; font-size: 0.7rem; font-weight: 700; transition: 0.2s; text-transform: uppercase; }
-        .nav-grid button:hover { background: #f1f5f9; border-color: var(--p); }
-        .nav-grid button.active { background: var(--p); color: var(--white); border-color: var(--p); }
+        .nav-box { background: var(--w); padding: 20px; border-radius: 20px; margin-bottom: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .nav-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 10px; }
+        .nav-grid button { padding: 10px; border: 1px solid #e2e8f0; background: none; border-radius: 10px; cursor: pointer; font-size: 0.7rem; font-weight: 700; transition: 0.2s; text-transform: uppercase; }
+        .nav-grid button:hover { background: #f8fafc; border-color: var(--p); }
+        .nav-grid button.active { background: var(--p); color: var(--w); border-color: var(--p); }
+        .cat-label { grid-column: 1 / -1; font-size: 0.75rem; color: var(--s); margin-top: 15px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
 
-        .calc-card { background: var(--white); padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); display: none; min-height: 450px; }
+        .calc-card { background: var(--w); padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); display: none; min-height: 480px; }
         .calc-card.active { display: block; animation: fadeInUp 0.4s ease; }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 
         h2 { color: var(--p); margin-top: 0; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px; }
-        .group { margin-bottom: 15px; }
-        label { display: block; margin-bottom: 5px; font-weight: 600; font-size: 0.85rem; color: var(--s); }
+        .input-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: 600; font-size: 0.85rem; }
         input, select { width: 100%; padding: 12px; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem; box-sizing: border-box; }
-        .btn { width: 100%; padding: 15px; background: var(--p); color: var(--white); border: none; border-radius: 12px; font-size: 1rem; font-weight: bold; cursor: pointer; margin-top: 10px; transition: 0.2s; }
+        .btn { width: 100%; padding: 15px; background: var(--p); color: var(--w); border: none; border-radius: 12px; font-size: 1rem; font-weight: bold; cursor: pointer; margin-top: 15px; transition: 0.2s; }
         .btn:hover { background: #1d4ed8; transform: scale(1.01); }
-        .res { margin-top: 25px; padding: 20px; background: #eff6ff; border-radius: 12px; border-left: 5px solid var(--p); font-weight: bold; font-size: 1.1rem; text-align: center; }
+        .res { margin-top: 25px; padding: 20px; background: #eff6ff; border-radius: 12px; border-left: 5px solid var(--p); font-weight: bold; font-size: 1.1rem; text-align: center; color: #1e3a8a; }
         
         footer { text-align: center; margin: 50px 0; padding: 20px; color: var(--s); font-size: 0.85rem; }
         footer a { color: var(--p); text-decoration: none; font-weight: bold; }
@@ -36,114 +37,134 @@
 
 <div class="wrapper">
     <header>
-        <h1>MegaPortal Calculatoare v3.0</h1>
-        <p>30 de instrumente profesionale pentru orice nevoie</p>
+        <h1>UniCalc Ultimate 2026</h1>
+        <p>Finanțe, Taxe Europa, Sănătate și Instrumente Utile</p>
     </header>
 
-    <div class="nav-container">
+    <div class="nav-box">
         <div class="nav-grid">
-            <button onclick="sw(this,'tva')" class="active">TVA</button>
-            <button onclick="sw(this,'sal')">Salariu</button>
-            <button onclick="sw(this,'aut')">Auto</button>
-            <button onclick="sw(this,'imc')">IMC</button>
-            <button onclick="sw(this,'apa')">Apă</button>
-            <button onclick="sw(this,'red')">Reduceri</button>
-            <button onclick="sw(this,'var')">Vârstă</button>
-            <button onclick="sw(this,'cre')">Credit</button>
-            <button onclick="sw(this,'pro')">Procente</button>
-            <button onclick="sw(this,'ene')">Energie</button>
-            <button onclick="sw(this,'bac')">Bacșiș</button>
-            <button onclick="sw(this,'cal')">Calorii</button>
-            <button onclick="sw(this,'tem')">Temp</button>
-            <button onclick="sw(this,'par')">Parole</button>
+            <div class="cat-label">TAXE & EUROPA</div>
+            <button onclick="sw(this,'tva_ro')" class="active">TVA România</button>
+            <button onclick="sw(this,'tva_md')">TVA Moldova</button>
+            <button onclick="sw(this,'tva_de')">TVA Germania</button>
+            <button onclick="sw(this,'tva_uk')">VAT UK</button>
+            <button onclick="sw(this,'tva_it')">TVA Italia</button>
+            <button onclick="sw(this,'tva_sr')">TVA Serbia</button>
+            <button onclick="sw(this,'curs')">Curs Valutar</button>
+            
+            <div class="cat-label">FINANȚE & AFACERI</div>
+            <button onclick="sw(this,'sal')">Salariu Net</button>
+            <button onclick="sw(this,'cre')">Rată Credit</button>
             <button onclick="sw(this,'inv')">Investiții</button>
-            <button onclick="sw(this,'vop')">Vopsea</button>
-            <button onclick="sw(this,'bet')">Beton</button>
-            <button onclick="sw(this,'met')">Metabolism</button>
-            <button onclick="sw(this,'buc')">Bucătărie</button>
-            <button onclick="sw(this,'ovul')">Ovulație</button>
-            <button onclick="sw(this,'pas')">Pași/Calorii</button>
+            <button onclick="sw(this,'pro')">Procente</button>
             <button onclick="sw(this,'mar')">Marjă Profit</button>
-            <button onclick="sw(this,'scad')">Scadență</button>
-            <button onclick="sw(this,'apa_p')">Apă Piscine</button>
-            <button onclick="sw(this,'vitez')">Viteză</button>
-            <button onclick="sw(this,'arie')">Arie Cerc</button>
-            <button onclick="sw(this,'greut')">Greutate Ideală</button>
-            <button onclick="sw(this,'pret_u')">Preț Unitar</button>
-            <button onclick="sw(this,'dob_c')">Dobândă C.</button>
-            <button onclick="sw(this,'zod')">Zodiac</button>
+            
+            <div class="cat-label">SĂNĂTATE & FITNESS</div>
+            <button onclick="sw(this,'imc')">IMC</button>
+            <button onclick="sw(this,'apa')">Apă/Zi</button>
+            <button onclick="sw(this,'cal')">BMR Calorii</button>
+            <button onclick="sw(this,'pas')">Pași -> Calorii</button>
+            <button onclick="sw(this,'gr_i')">Greutate Ideală</button>
+            
+            <div class="cat-label">CASĂ & UTILITĂȚI</div>
+            <button onclick="sw(this,'ene')">Factură Curent</button>
+            <button onclick="sw(this,'aut')">Consum Auto</button>
+            <button onclick="sw(this,'vop')">Necesar Vopsea</button>
+            <button onclick="sw(this,'bet')">Volum Beton</button>
+            <button onclick="sw(this,'par')">Parole</button>
         </div>
     </div>
 
-    <div id="tva" class="calc-card active"><h2>TVA România</h2><label>Sumă:</label><input type="number" id="tva-s"><label>%:</label><input type="number" id="tva-c" value="19"><button class="btn" onclick="cTVA()">Calculează</button><div id="r-tva" class="res">...</div></div>
-    <div id="sal" class="calc-card"><h2>Salariu Net</h2><label>Brut:</label><input type="number" id="sal-b"><button class="btn" onclick="cSal()">Net Estimat</button><div id="r-sal" class="res">...</div></div>
-    <div id="aut" class="calc-card"><h2>Consum Drum</h2><label>Km:</label><input type="number" id="au-k"><label>L/100km:</label><input type="number" id="au-c"><label>Preț L:</label><input type="number" id="au-p"><button class="btn" onclick="cAu()">Cost</button><div id="r-au" class="res">...</div></div>
-    <div id="imc" class="calc-card"><h2>IMC</h2><label>Înălțime(cm):</label><input type="number" id="im-h"><label>Greutate(kg):</label><input type="number" id="im-g"><button class="btn" onclick="cIm()">Află</button><div id="r-im" class="res">...</div></div>
-    <div id="apa" class="calc-card"><h2>Hidratare</h2><label>Kg:</label><input type="number" id="ap-g"><button class="btn" onclick="cAp()">Litri/zi</button><div id="r-ap" class="res">...</div></div>
-    <div id="red" class="calc-card"><h2>Reduceri</h2><label>Preț:</label><input type="number" id="re-p"><label>%:</label><input type="number" id="re-r"><button class="btn" onclick="cRe()">Preț Final</button><div id="r-re" class="res">...</div></div>
-    <div id="var" class="calc-card"><h2>Vârstă</h2><label>An Naștere:</label><input type="number" id="va-a"><button class="btn" onclick="cVa()">Ani</button><div id="r-va" class="res">...</div></div>
-    <div id="cre" class="calc-card"><h2>Rată Credit</h2><label>Sumă:</label><input type="number" id="cr-s"><label>% An:</label><input type="number" id="cr-d"><label>Luni:</label><input type="number" id="cr-l"><button class="btn" onclick="cCr()">Rată</button><div id="r-cre" class="res">...</div></div>
-    <div id="pro" class="calc-card"><h2>Procente</h2><label>%:</label><input type="number" id="pr-p"><label>Din:</label><input type="number" id="pr-s"><button class="btn" onclick="cPr()">Valoare</button><div id="r-pro" class="res">...</div></div>
-    <div id="ene" class="calc-card"><h2>Energie</h2><label>Wați:</label><input type="number" id="en-w"><label>Ore/zi:</label><input type="number" id="en-h"><button class="btn" onclick="cEn()">Cost Lună</button><div id="r-ene" class="res">...</div></div>
-    <div id="bac" class="calc-card"><h2>Bacșiș</h2><label>Notă:</label><input type="number" id="ba-n"><label>%:</label><input type="number" id="ba-p" value="10"><button class="btn" onclick="cBa()">Suma</button><div id="r-bac" class="res">...</div></div>
-    <div id="cal" class="calc-card"><h2>BMR Calorii</h2><label>Kg:</label><input type="number" id="ca-g"><label>Cm:</label><input type="number" id="ca-h"><label>Ani:</label><input type="number" id="ca-v"><button class="btn" onclick="cCa()">Calorii</button><div id="r-cal" class="res">...</div></div>
-    <div id="tem" class="calc-card"><h2>Temp C/F</h2><label>Celsius:</label><input type="number" id="te-c"><button class="btn" onclick="cTe()">Fahrenheit</button><div id="r-tem" class="res">...</div></div>
-    <div id="par" class="calc-card"><h2>Generator Parolă</h2><label>Caractere:</label><input type="number" id="pa-l" value="12"><button class="btn" onclick="cPa()">Generează</button><div id="r-par" class="res" style="word-break:break-all;">...</div></div>
-    <div id="inv" class="calc-card"><h2>Investiții Viitoare</h2><label>Suma Inițială:</label><input type="number" id="in-s"><label>% Profit Anual:</label><input type="number" id="in-p"><label>Ani:</label><input type="number" id="in-a"><button class="btn" onclick="cIn()">Valoare Finală</button><div id="r-inv" class="res">...</div></div>
-    <div id="vop" class="calc-card"><h2>Necesar Vopsea</h2><label>Lățime Perete(m):</label><input type="number" id="vo-l"><label>Înălțime(m):</label><input type="number" id="vo-h"><button class="btn" onclick="cVo()">Litri Necisari</button><div id="r-vop" class="res">...</div></div>
-    <div id="bet" class="calc-card"><h2>Volum Beton</h2><label>Lungime(m):</label><input type="number" id="be-l"><label>Lățime(m):</label><input type="number" id="be-w"><label>Grosime(m):</label><input type="number" id="be-h"><button class="btn" onclick="cBe()">Metri Cubi</button><div id="r-bet" class="res">...</div></div>
-    <div id="met" class="calc-card"><h2>Metabolism</h2><p>Calculează automat necesarul caloric bazat pe activitate.</p><button class="btn" onclick="cMe()">Vezi info</button><div id="r-met" class="res">Folosește BMR pentru bază.</div></div>
-    <div id="buc" class="calc-card"><h2>Bucătărie (Căni -> Grams)</h2><label>Nr. Căni:</label><input type="number" id="bu-c"><button class="btn" onclick="cBu()">Grame (Făină)</button><div id="r-buc" class="res">...</div></div>
-    <div id="ovul" class="calc-card"><h2>Calendar Ovulație</h2><label>Zile Ciclu (ex 28):</label><input type="number" id="ov-z"><button class="btn" onclick="cOv()">Ziua Fertilă Estimat</button><div id="r-ovul" class="res">...</div></div>
-    <div id="pas" class="calc-card"><h2>Calorii per Pași</h2><label>Nr. Pași:</label><input type="number" id="ps-n"><button class="btn" onclick="cPs()">Calorii Arse</button><div id="r-pas" class="res">...</div></div>
-    <div id="mar" class="calc-card"><h2>Marjă Profit</h2><label>Cost:</label><input type="number" id="ma-c"><label>Preț Vânzare:</label><input type="number" id="ma-v"><button class="btn" onclick="cMa()">Marjă (%)</button><div id="r-mar" class="res">...</div></div>
-    <div id="scad" class="calc-card"><h2>Zile până la Scadență</h2><label>An:</label><input type="number" id="sc-a"><label>Lună:</label><input type="number" id="sc-l"><label>Zi:</label><input type="number" id="sc-z"><button class="btn" onclick="cSc()">Zile Rămase</button><div id="r-scad" class="res">...</div></div>
-    <div id="apa_p" class="calc-card"><h2>Volum Apă Piscină</h2><label>Diametru(m):</label><input type="number" id="ap-d"><label>Adâncime(m):</label><input type="number" id="ap-h"><button class="btn" onclick="cApP()">Litri</button><div id="r-apa_p" class="res">...</div></div>
-    <div id="vitez" class="calc-card"><h2>KM/H -> M/S</h2><label>KM/H:</label><input type="number" id="vi-k"><button class="btn" onclick="cVi()">Metri pe secundă</button><div id="r-vitez" class="res">...</div></div>
-    <div id="arie" class="calc-card"><h2>Arie Cerc</h2><label>Rază (m):</label><input type="number" id="ar-r"><button class="btn" onclick="cAr()">Arie (mp)</button><div id="r-arie" class="res">...</div></div>
-    <div id="greut" class="calc-card"><h2>Greutate Ideală</h2><label>Înălțime (cm):</label><input type="number" id="gr-h"><button class="btn" onclick="cGr()">Kg Ideale</button><div id="r-greut" class="res">...</div></div>
-    <div id="pret_u" class="calc-card"><h2>Preț Unitar</h2><label>Preț Total:</label><input type="number" id="pu-p"><label>Cantitate (Buc/Kg):</label><input type="number" id="pu-c"><button class="btn" onclick="cPu()">Preț pe unitate</button><div id="r-pret_u" class="res">...</div></div>
-    <div id="dob_c" class="calc-card"><h2>Dobândă Compusă</h2><label>Suma:</label><input type="number" id="dc-s"><label>% An:</label><input type="number" id="dc-p"><label>Ani:</label><input type="number" id="dc-a"><button class="btn" onclick="cDc()">Total Final</button><div id="r-dob_c" class="res">...</div></div>
-    <div id="zod" class="calc-card"><h2>Află Zodia</h2><label>Zi:</label><input type="number" id="zo-z"><label>Lună:</label><input type="number" id="zo-l"><button class="btn" onclick="cZo()">Zodia Ta</button><div id="r-zod" class="res">...</div></div>
+    <div id="tva_ro" class="calc-card active">
+        <h2>TVA România</h2>
+        <label>Sumă (RON):</label><input type="number" id="tr-s">
+        <label>Cotă (%):</label><input type="number" id="tr-c" value="19">
+        <button class="btn" onclick="cTVA('tr-s','tr-c','r-tr')">Calculează</button>
+        <div id="r-tr" class="res">...</div>
+    </div>
+
+    <div id="tva_md" class="calc-card">
+        <h2>TVA Republica Moldova</h2>
+        <label>Sumă (MDL):</label><input type="number" id="tm-s">
+        <label>Cotă (%):</label><input type="number" id="tm-c" value="20">
+        <button class="btn" onclick="cTVA('tm-s','tm-c','r-tm')">Calculează</button>
+        <div id="r-tm" class="res">...</div>
+    </div>
+
+    <div id="curs" class="calc-card">
+        <h2>Convertor Valutar (Simulat)</h2>
+        <label>Suma:</label><input type="number" id="cu-s">
+        <label>Direcție:</label>
+        <select id="cu-d"><option value="5">EUR -> RON</option><option value="0.2">RON -> EUR</option><option value="4.6">USD -> RON</option></select>
+        <button class="btn" onclick="cCurs()">Convertește</button>
+        <div id="r-cu" class="res">...</div>
+    </div>
+
+    <div id="sal" class="calc-card">
+        <h2>Salariu Net România</h2>
+        <label>Salariu Brut (RON):</label><input type="number" id="sa-b">
+        <button class="btn" onclick="cSal()">Calculează Net</button>
+        <div id="r-sa" class="res">...</div>
+    </div>
+
+    <div id="imc" class="calc-card">
+        <h2>Indice Masă Corporală</h2>
+        <label>Înălțime (cm):</label><input type="number" id="im-h">
+        <label>Greutate (kg):</label><input type="number" id="im-g">
+        <button class="btn" onclick="cImc()">Vezi Rezultat</button>
+        <div id="r-im" class="res">...</div>
+    </div>
+
+    <div id="cre" class="calc-card">
+        <h2>Rată Credit</h2>
+        <label>Sumă Împrumut:</label><input type="number" id="cr-s">
+        <label>Dobândă Anuală (%):</label><input type="number" id="cr-d">
+        <label>Luni:</label><input type="number" id="cr-l">
+        <button class="btn" onclick="cCre()">Calculează Rata</button>
+        <div id="r-cr" class="res">...</div>
+    </div>
+
+    <div id="ene" class="calc-card">
+        <h2>Cost Energie Electrică</h2>
+        <label>Putere (Wați):</label><input type="number" id="en-w">
+        <label>Ore folosire/zi:</label><input type="number" id="en-h">
+        <button class="btn" onclick="cEne()">Cost pe lună</button>
+        <div id="r-en" class="res">...</div>
+    </div>
+
+    <div id="aut" class="calc-card">
+        <h2>Consum Carburant</h2>
+        <label>Km parcurși:</label><input type="number" id="au-k">
+        <label>Consum (L/100km):</label><input type="number" id="au-c">
+        <label>Preț Litru:</label><input type="number" id="au-p">
+        <button class="btn" onclick="cAut()">Cost Drum</button>
+        <div id="r-au" class="res">...</div>
+    </div>
+
+    <div id="par" class="calc-card">
+        <h2>Generator Parolă</h2>
+        <label>Lungime:</label><input type="number" id="pa-l" value="14">
+        <button class="btn" onclick="cPar()">Generează Parolă</button>
+        <div id="r-pa" class="res" style="word-break: break-all;">...</div>
+    </div>
 
     <footer>
-        <p>&copy; 2026 Portal Calculatoare Profesionale. <a href="privacy-policy.html">Privacy Policy</a></p>
+        <p>&copy; 2026 UniCalc Pro. Toate drepturile rezervate. <br><br>
+        <a href="privacy-policy.html">Politică de Confidențialitate</a></p>
     </footer>
 </div>
 
 <script>
     function sw(b,i){document.querySelectorAll('.calc-card').forEach(s=>s.classList.remove('active'));document.querySelectorAll('.nav-grid button').forEach(n=>n.classList.remove('active'));document.getElementById(i).classList.add('active');b.classList.add('active');}
     
-    function cTVA(){let s=f('tva-s'),c=f('tva-c');d('r-tva','TVA: '+(s*c/100).toFixed(2)+' | Total: '+(s+s*c/100).toFixed(2));}
-    function cSal(){let b=f('sal-b');d('r-sal','Net Estimat: '+(b*0.585).toFixed(0)+' RON');}
-    function cAu(){let k=f('au-k'),c=f('au-c'),p=f('au-p');d('r-au','Cost: '+(k*c/100*p).toFixed(2)+' RON');}
-    function cIm(){let h=f('im-h')/100,g=f('im-g');d('r-im','IMC: '+(g/(h*h)).toFixed(1));}
-    function cAp(){let g=f('ap-g');d('r-ap',(g*0.035).toFixed(1)+' L/zi');}
-    function cRe(){let p=f('re-p'),r=f('re-r');d('r-re','Nou Preț: '+(p-p*r/100).toFixed(2));}
-    function cVa(){let a=f('va-a');d('r-va',(2026-a)+' ani');}
-    function cCr(){let s=f('cr-s'),d_an=f('cr-d')/1200,l=f('cr-l');let r=(s*d_an)/(1-Math.pow(1+d_an,-l));d('r-cre','Rată: '+r.toFixed(2)+' RON');}
-    function cPr(){let p=f('pr-p'),s=f('pr-s');d('r-pro',(p*s/100).toFixed(2));}
-    function cEn(){let w=f('en-w'),h=f('en-h');d('r-ene',(w*h*30/1000*0.8).toFixed(2)+' RON');}
-    function cBa(){let n=f('ba-n'),p=f('ba-p');d('r-bac','Bacșiș: '+(n*p/100).toFixed(2));}
-    function cCa(){let g=f('ca-g'),h=f('ca-h'),v=f('ca-v');d('r-cal',(10*g+6.25*h-5*v+5).toFixed(0)+' kcal');}
-    function cTe(){let c=f('te-c');d('r-tem',(c*9/5+32).toFixed(1)+' °F');}
-    function cPa(){let l=f('pa-l'),c="ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789!@#",r="";for(let i=0;i<l;i++)r+=c.charAt(Math.floor(Math.random()*c.length));d('r-par',r);}
-    function cIn(){let s=f('in-s'),p=f('in-p')/100,a=f('in-a');d('r-inv',(s*Math.pow(1+p,a)).toFixed(2));}
-    function cVo(){let l=f('vo-l'),h=f('vo-h');d('r-vop',(l*h/10).toFixed(1)+' Litri (2 straturi)');}
-    function cBe(){let l=f('be-l'),w=f('be-w'),h=f('be-h');d('r-bet',(l*w*h).toFixed(2)+' mc');}
-    function cMe(){d('r-met','BMR-ul tău x 1.2 (sedentar) sau 1.5 (activ).');}
-    function cBu(){let c=f('bu-c');d('r-buc',(c*125).toFixed(0)+' grame făină');}
-    function cOv(){let z=f('ov-z');d('r-ovul','Ziua fertilă aprox: '+(z-14));}
-    function cPs(){let p=f('ps-n');d('r-pas',(p*0.04).toFixed(0)+' kcal arse');}
-    function cMa(){let c=f('ma-c'),v=f('ma-v');d('r-mar',((v-c)/v*100).toFixed(1)+' %');}
-    function cSc(){let a=f('sc-a'),l=f('sc-l'),z=f('sc-z');let diff=new Date(a,l-1,z)-new Date();d('r-scad',Math.ceil(diff/(1000*60*60*24))+' zile');}
-    function cApP(){let r=f('ap-d')/2,h=f('ap-h');d('r-apa_p',(Math.PI*r*r*h*1000).toFixed(0)+' litri');}
-    function cVi(){let k=f('vi-k');d('r-vitez',(k/3.6).toFixed(2)+' m/s');}
-    function cAr(){let r=f('ar-r');d('r-arie',(Math.PI*r*r).toFixed(2)+' mp');}
-    function cGr(){let h=f('gr-h');d('r-greut',(h-100-((h-150)/4)).toFixed(1)+' kg');}
-    function cPu(){let p=f('pu-p'),c=f('pu-c');d('r-pret_u',(p/c).toFixed(2)+' /unitate');}
-    function cDc(){let s=f('dc-s'),p=f('dc-p')/100,a=f('dc-a');d('r-dob_c',(s*Math.pow(1+p,a)).toFixed(2));}
-    function cZo(){let z=f('zo-z'),l=f('zo-l');let res="Berbec";if((l==3&&z>=21)||(l==4&&z<=19))res="Berbec";else if((l==4&&z>=20)||(l==5&&z<=20))res="Taur";else res="Verifică online (limită cod)";d('r-zod',res);}
+    function cTVA(sid, cid, rid){let s=f(sid), c=f(cid); let t=s*(c/100); d(rid, "TVA: "+t.toFixed(2)+" | Total: "+(s+t).toFixed(2));}
+    function cCurs(){let s=f('cu-s'), d_val=f('cu-d'); d('r-cu', "Rezultat: "+(s*d_val).toFixed(2));}
+    function cSal(){let b=f('sa-b'); d('r-sa', "Net Estimat: "+(b*0.585).toFixed(0)+" RON");}
+    function cImc(){let h=f('im-h')/100, g=f('im-g'); let i=g/(h*h); d('r-im', "IMC: "+i.toFixed(1));}
+    function cCre(){let s=f('cr-s'), d_an=f('cr-d')/1200, l=f('cr-l'); let r=(s*d_an)/(1-Math.pow(1+d_an,-l)); d('r-cr', "Rată Lunară: "+r.toFixed(2)+" RON");}
+    function cEne(){let w=f('en-w'), h=f('en-h'); d('r-en', "Cost estimat/lună: "+(w*h*30/1000*0.8).toFixed(2)+" RON");}
+    function cAut(){let k=f('au-k'), c=f('au-c'), p=f('au-p'); d('r-au', "Cost total: "+(k*c/100*p).toFixed(2)+" RON");}
+    function cPar(){let l=f('pa-l'), c="ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789!@#$%^&*()", r=""; for(let i=0;i<l;i++) r+=c.charAt(Math.floor(Math.random()*c.length)); d('r-pa', r);}
 
     function f(i){return parseFloat(document.getElementById(i).value)||0;}
     function d(i,v){document.getElementById(i).innerHTML=v;}
@@ -151,6 +172,7 @@
 
 </body>
 </html>
+
 
 
 
