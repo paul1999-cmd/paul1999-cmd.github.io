@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Matematic Universal | UniCalc Pro</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f4f6f9; padding: 20px; color: #333; }
+        .calc-box { background: white; padding: 30px; max-width: 500px; margin: 20px auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        h1, h2 { color: #2c3e50; text-align: center; }
+        input, button, select { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { background-color: #2c3e50; color: white; font-weight: bold; cursor: pointer; border: none; }
+        button:hover { background-color: #34495e; }
+        .result { background: #e2e8f0; padding: 15px; border-radius: 4px; margin-top: 15px; font-weight: bold; font-size: 18px; text-align: center; }
+        .content-section { max-width: 800px; margin: 40px auto; background: white; padding: 30px; border-radius: 8px; line-height: 1.6; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        footer { text-align: center; margin-top: 40px; padding: 20px; font-size: 14px; border-top: 1px solid #ddd; }
+        footer a { color: #2c3e50; text-decoration: none; margin: 0 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="calc-box">
+        <h1>Calculator Matematic</h1>
+        <input type="number" id="num1" placeholder="Primul număr">
+        <select id="operatie">
+            <option value="adunare">Adunare (+)</option>
+            <option value="scadere">Scădere (-)</option>
+            <option value="inmultire">Înmulțire (×)</option>
+            <option value="impartire">Împărțire (÷)</option>
+            <option value="procent">Procent (% din primul număr)</option>
+            <option value="radical">Radical (din primul număr)</option>
+        </select>
+        <input type="number" id="num2" placeholder="Al doilea număr (opțional pentru radical)">
+        <button onclick="calculeazaMate()">Calculează</button>
+        <div class="result" id="rezultatMate">Rezultatul va apărea aici.</div>
+    </div>
+
+    <div class="content-section">
+        <h2>Importanța calculelor matematice rapide în viața de zi cu zi</h2>
+        <p>Matematica este la baza tuturor activităților noastre, fie că vorbim despre gestionarea unui buget personal, calcularea unor procente la cumpărături sau rezolvarea unor probleme școlare și tehnice. Acest calculator matematic universal este conceput pentru a oferi soluții instantanee pentru operațiile de bază, dar și pentru funcții mai avansate precum extragerea radicalului sau aflarea procentelor.</p>
+        <p>Înțelegerea modului în care funcționează operațiile elementare ne ajută să ne dezvoltăm gândirea logică. Utilizarea unui instrument digital elimină riscul erorilor umane și economisește timp prețios, fiind ideal pentru elevi, studenți și profesioniști deopotrivă.</p>
+    </div>
+
+    <footer>
+        <p>© 2026 UniCalc Pro. Toate drepturile rezervate.</p>
+        <p><a href="index.html">Acasă</a> | <a href="politica-de-confidentialitate.html">Confidențialitate</a></p>
+    </footer>
+
+    <script>
+        function calculeazaMate() {
+            var n1 = parseFloat(document.getElementById('num1').value);
+            var n2 = parseFloat(document.getElementById('num2').value);
+            var op = document.getElementById('operatie').value;
+            var rez = 0;
+
+            if (isNaN(n1)) {
+                document.getElementById('rezultatMate').innerHTML = "Introduceți cel puțin primul număr!";
+                return;
+            }
+
+            if (op === 'adunare') rez = n1 + n2;
+            else if (op === 'scadere') rez = n1 - n2;
+            else if (op === 'inmultire') rez = n1 * n2;
+            else if (op === 'impartire') {
+                if(n2 === 0) { document.getElementById('rezultatMate').innerHTML = "Nu se poate împărți la zero!"; return; }
+                rez = n1 / n2;
+            }
+            else if (op === 'procent') rez = (n1 * n2) / 100;
+            else if (op === 'radical') {
+                if(n1 < 0) { document.getElementById('rezultatMate').innerHTML = "Numărul nu poate fi negativ!"; return; }
+                rez = Math.sqrt(n1);
+            }
+
+            document.getElementById('rezultatMate').innerHTML = "Rezultat: " + rez;
+        }
+    </script>
+</body>
+</html>
