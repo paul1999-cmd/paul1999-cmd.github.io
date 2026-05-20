@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertor Unități de Greutate | UniCalc Pro</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f4f6f9; padding: 20px; color: #333; }
+        .calc-box { background: white; padding: 30px; max-width: 500px; margin: 20px auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        h1, h2 { color: #8e44ad; text-align: center; }
+        input, button, select { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { background-color: #8e44ad; color: white; font-weight: bold; cursor: pointer; border: none; }
+        button:hover { background-color: #7d3c98; }
+        .result { background: #e2e8f0; padding: 15px; border-radius: 4px; margin-top: 15px; font-weight: bold; text-align: center; }
+        .content-section { max-width: 800px; margin: 40px auto; background: white; padding: 30px; border-radius: 8px; line-height: 1.6; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        footer { text-align: center; margin-top: 40px; padding: 20px; font-size: 14px; border-top: 1px solid #ddd; }
+        footer a { color: #8e44ad; text-decoration: none; margin: 0 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="calc-box">
+        <h1>Convertor de Greutate / Masă</h1>
+        <label>Introduceți valoarea:</label>
+        <input type="number" id="valoareGret" placeholder="Ex: 10">
+        <label>Din unitatea:</label>
+        <select id="dinGret">
+            <option value="kg">Kilograme (kg)</option>
+            <option value="g">Grame (g)</option>
+            <option value="lbs">Livre / Pounds (lbs)</option>
+        </select>
+        <label>În unitatea:</label>
+        <select id="laGret">
+            <option value="g">Grame (g)</option>
+            <option value="kg">Kilograme (kg)</option>
+            <option value="lbs">Livre / Pounds (lbs)</option>
+        </select>
+        <button onclick="convertesteGreutate()">Transformă</button>
+        <div class="result" id="rezultatGret">Rezultatul va apărea aici.</div>
+    </div>
+
+    <div class="content-section">
+        <h2>De ce este importantă precizia în conversia maselor?</h2>
+        <p>Greutatea sau masa este o unitate de măsură fundamentală în comerțul internațional, în transportul aerian, logistică dar și în fitness și nutriție. Când comandăm bunuri de pe platforme internaționale sau când pregătim preparate culinare, ne lovim frecvent de sistemul britanic/american exprimat în livre (pounds - lbs).</p>
+        <p>Aplicația noastră face transformarea instantanee între kilograme, grame și livre folosind coeficienți preciși aprobați la nivel internațional, reducând riscul erorilor în rețete sau în procesele de expediție cargo.</p>
+    </div>
+
+    <footer>
+        <p>© 2026 UniCalc Pro. Toate drepturile rezervate.</p>
+        <p><a href="index.html">Acasă</a> | <a href="politica-de-confidentialitate.html">Confidențialitate</a></p>
+    </footer>
+
+    <script>
+        function convertesteGreutate() {
+            var val = parseFloat(document.getElementById('valoareGret').value);
+            var din = document.getElementById('dinGret').value;
+            var la = document.getElementById('laGret').value;
+
+            if(isNaN(val)) {
+                document.getElementById('rezultatGret').innerHTML = "Introduceți o valoare validă!";
+                return;
+            }
+
+            // Convertim în grame ca bază standard
+            var inGrame = val;
+            if(din === 'kg') inGrame = val * 1000;
+            else if(din === 'lbs') inGrame = val * 453.59237;
+
+            // Convertim din grame în unitatea țintă
+            var final = inGrame;
+            if(la === 'kg') final = inGrame / 1000;
+            else if(la === 'lbs') final = inGrame / 453.59237;
+
+            document.getElementById('rezultatGret').innerHTML = val + " " + din + " = " + final.toFixed(3) + " " + la;
+        }
+    </script>
+</body>
+</html>
