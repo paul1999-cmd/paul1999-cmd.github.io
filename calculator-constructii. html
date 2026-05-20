@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Materiale Construcții | UniCalc Pro</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f4f6f9; padding: 20px; color: #333; }
+        .calc-box { background: white; padding: 30px; max-width: 500px; margin: 20px auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        h1, h2 { color: #d35400; text-align: center; }
+        input, button { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { background-color: #d35400; color: white; font-weight: bold; cursor: pointer; border: none; }
+        button:hover { background-color: #e67e22; }
+        .result { background: #e2e8f0; padding: 15px; border-radius: 4px; margin-top: 15px; font-weight: bold; line-height: 1.5; }
+        .content-section { max-width: 800px; margin: 40px auto; background: white; padding: 30px; border-radius: 8px; line-height: 1.6; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        footer { text-align: center; margin-top: 40px; padding: 20px; font-size: 14px; border-top: 1px solid #ddd; }
+        footer a { color: #d35400; text-decoration: none; margin: 0 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="calc-box">
+        <h1>Calculator Volum Beton</h1>
+        <label>Lungime suprafață (metri):</label>
+        <input type="number" id="lungime" placeholder="Ex: 5" step="0.1">
+        <label>Lățime suprafață (metri):</label>
+        <input type="number" id="latime" placeholder="Ex: 4" step="0.1">
+        <label>Grosime placă (centimetri):</label>
+        <input type="number" id="grosime" placeholder="Ex: 10" step="1">
+        <button onclick="calculeazaBeton()">Calculează Necesarul</button>
+        <div class="result" id="rezultatBeton">Rezultatul va apărea aici.</div>
+    </div>
+
+    <div class="content-section">
+        <h2>Cum se calculează volumul de materiale pentru șantier?</h2>
+        <p>Planificarea corectă a materialelor de construcție este primul pas pentru un șantier de succes și pentru evitarea pierderilor financiare. Fie că torni o alee, o fundație sau o placă de beton, este esențial să știi cu exactitate volumul total de ciment exprimat în metri cubi ($m^3$).</p>
+        <p>Formula aplicată este simplă: se înmulțește lungimea cu lățimea pentru a afla suprafața în metri pătrați, iar rezultatul se înmulțește cu grosimea (transformată din centimetri în metri). Acest instrument digital calculează instant volumul total necesar și adaugă automat o marjă standard de 10% pentru pierderi, asigurându-te că nu vei rămâne fără materiale în mijlocul lucrării.</p>
+    </div>
+
+    <footer>
+        <p>© 2026 UniCalc Pro. Toate drepturile rezervate.</p>
+        <p><a href="index.html">Acasă</a> | <a href="politica-de-confidentialitate.html">Confidențialitate</a></p>
+    </footer>
+
+    <script>
+        function calculeazaBeton() {
+            var L = parseFloat(document.getElementById('lungime').value);
+            var l = parseFloat(document.getElementById('latime').value);
+            var g = parseFloat(document.getElementById('grosime').value);
+
+            if(isNaN(L) || isNaN(l) || isNaN(g) || L<=0 || l<=0 || g<=0) {
+                document.getElementById('rezultatBeton').innerHTML = "Introduceți valori valide!";
+                return;
+            }
+
+            var volumNet = L * l * (g / 100);
+            var volumCuPierderi = volumNet * 1.1; // +10% marjă de siguranță
+
+            document.getElementById('rezultatBeton').innerHTML = "Volum necesar pur: " + volumNet.toFixed(2) + " m³<br>Recomandat (cu 10% pierderi): " + volumCuPierderi.toFixed(2) + " m³";
+        }
+    </script>
+</body>
+</html>
