@@ -1,31 +1,69 @@
-
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-<meta charset="UTF-8">
-<title>Calculator salariu net</title>
-<meta name="description" content="Calculează salariul net aproximativ.">
-<style>
-body{font-family:Arial;margin:40px;background:#f4f4f4}
-.box{background:white;padding:20px;border-radius:10px;max-width:700px;margin:auto;box-shadow:0 0 10px rgba(0,0,0,0.1)}
-input,button{padding:8px;margin-top:5px}
-.result{margin-top:10px;font-weight:bold}
-a{display:block;margin-top:10px}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Salariu Net 2026 | UniCalc Pro</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f4f6f9; padding: 20px; color: #333; }
+        .calc-box { background: white; padding: 30px; max-width: 500px; margin: 20px auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        h1, h2 { color: #1e3a8a; text-align: center; }
+        input, button { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { background-color: #1e3a8a; color: white; font-weight: bold; cursor: pointer; border: none; }
+        button:hover { background-color: #2c5282; }
+        .result { background: #e2e8f0; padding: 15px; border-radius: 4px; margin-top: 15px; font-weight: bold; }
+        .content-section { max-width: 800px; margin: 40px auto; background: white; padding: 30px; border-radius: 8px; line-height: 1.6; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .content-section h2 { text-align: left; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        footer { text-align: center; margin-top: 40px; padding: 20px; font-size: 14px; border-top: 1px solid #ddd; }
+        footer a { color: #1e3a8a; text-decoration: none; margin: 0 10px; }
+    </style>
 </head>
 <body>
-<div class="box">
-<h1>Calculator salariu net</h1>
-<p>Calculează salariul net aproximativ.</p>
-<input id="val" type="number" placeholder="Introdu valoare">
-<button onclick="calc()">Calculează</button>
-<div class="result" id="rez"></div>
-</div>
 
-<script>
-function calc(){
-let v=document.getElementById("val").value; document.getElementById("rez").innerHTML="Net aproximativ: "+(v*0.65).toFixed(2);
-}
-</script>
+    <div class="calc-box">
+        <h1>Calculator Salariu Net</h1>
+        <label>Introduceți Salariul Brut (RON):</label>
+        <input type="number" id="brut" placeholder="Ex: 7000">
+        <button onclick="calculeazaSalariu()">Calculează Netul</button>
+        <div class="result" id="rezultatSalariu">Salariul net va apărea aici.</div>
+    </div>
+
+    <div class="content-section">
+        <h2>Cum se calculează salariul net în România?</h2>
+        <p>Salariul net reprezintă suma de bani cu care angajatul rămâne efectiv în mână după deducerea tuturor taxelor și impozitelor obligatorii către statul român. Pentru a înțelege cum funcționează acest proces, este important să știm care sunt principalele contribuții reținute din salariul brut de către angajator și virate către bugetul de stat:</p>
+        <ul>
+            <li><strong>CAS (Contribuția la Asigurări Sociale / Pensie):</strong> Aceasta reprezintă 25% din valoarea totală a salariului brut al angajatului.</li>
+            <li><strong>CASS (Contribuția la Asigurări Sociale de Sănătate):</strong> Reprezintă 10% din salariul brut și asigură calitatea de asigurat în sistemul public de sănătate.</li>
+            <li><strong>Impozitul pe venit:</strong> Este o cotă de 10% aplicată asupra bazei de calcul (baza se află scăzând din salariul brut taxele CAS și CASS, plus eventualele deduceri personale acordate în funcție de persoanele aflate în întreținere).</li>
+        </ul>
+        <p>Utilizarea unui calculator de salariu online te ajută să estimezi rapid și corect veniturile tale lunare în funcție de modificările legislative din fiecare an fiscal. Este un instrument esențial atât pentru angajați, cât și pentru angajatori în timpul negocierilor contractuale, oferind o transparență totală asupra taxelor virate direct către ANAF.</p>
+    </div>
+
+    <footer>
+        <p>© 2026 UniCalc Pro. Toate drepturile rezervate.</p>
+        <p>
+            <a href="index.html">Acasă</a> | 
+            <a href="politica-de-confidentialitate.html">Politică de Confidențialitate</a> | 
+            <a href="calculator-combustibil.html">Consum Auto</a> | 
+            <a href="calculator-imc.html">Ghid IMC Sănătate</a>
+        </p>
+    </footer>
+
+    <script>
+        function calculeazaSalariu() {
+            var brut = parseFloat(document.getElementById('brut').value);
+            if(isNaN(brut) || brut <= 0) {
+                document.getElementById('rezultatSalariu').innerHTML = "Introduceți o sumă validă!";
+                return;
+            }
+            var cas = brut * 0.25;
+            var cass = brut * 0.10;
+            var bazaImpozabila = brut - cas - cass;
+            var impozit = bazaImpozabila * 0.10;
+            var net = brut - cas - cass - impozit;
+            
+            document.getElementById('rezultatSalariu').innerHTML = "Salariu Net: " + net.toFixed(2) + " RON<br><small style='color:#555;'>(CAS: " + cas.toFixed(2) + " RON, CASS: " + cass.toFixed(2) + " RON, Impozit: " + impozit.toFixed(2) + " RON)</small>";
+        }
+    </script>
 </body>
 </html>
