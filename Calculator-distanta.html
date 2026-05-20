@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertor Unități de Distanță | UniCalc Pro</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f4f6f9; padding: 20px; color: #333; }
+        .calc-box { background: white; padding: 30px; max-width: 500px; margin: 20px auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        h1, h2 { color: #16a085; text-align: center; }
+        input, button, select { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { background-color: #16a085; color: white; font-weight: bold; cursor: pointer; border: none; }
+        button:hover { background-color: #117a65; }
+        .result { background: #e2e8f0; padding: 15px; border-radius: 4px; margin-top: 15px; font-weight: bold; text-align: center; }
+        .content-section { max-width: 800px; margin: 40px auto; background: white; padding: 30px; border-radius: 8px; line-height: 1.6; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        footer { text-align: center; margin-top: 40px; padding: 20px; font-size: 14px; border-top: 1px solid #ddd; }
+        footer a { color: #16a085; text-decoration: none; margin: 0 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="calc-box">
+        <h1>Convertor Lungime / Distanță</h1>
+        <label>Introduceți valoarea:</label>
+        <input type="number" id="valoareDist" placeholder="Ex: 5">
+        <label>Din unitatea:</label>
+        <select id="dinUnitate">
+            <option value="m">Metri (m)</option>
+            <option value="km">Kilometri (km)</option>
+            <option value="cm">Centimetri (cm)</option>
+            <option value="inch">Inches (Țoli)</option>
+        </select>
+        <label>În unitatea:</label>
+        <select id="inUnitate">
+            <option value="km">Kilometri (km)</option>
+            <option value="m">Metri (m)</option>
+            <option value="cm">Centimetri (cm)</option>
+            <option value="inch">Inches (Țoli)</option>
+        </select>
+        <button onclick="convertesteDistanta()">Transformă</button>
+        <div class="result" id="rezultatDist">Rezultatul va apărea aici.</div>
+    </div>
+
+    <div class="content-section">
+        <h2>Sistemul metric versus sistemul imperial de măsură</h2>
+        <p>Conversia unităților de distanță este indispensabilă în inginerie, navigație, proiecte de design sau pur și simplu atunci când citim rețete și ghiduri internaționale. În timp ce majoritatea globului folosește sistemul metric bazat pe metri și kilometri, anumite industrii sau regiuni folosesc exclusiv unități imperiale precum inchi (țoli), picioare sau mile.</p>
+        <p>Acest convertor rapid efectuează calculele cu precizie matematică ridicată, asigurând o transformare corectă a metricilor, eliminând necesitatea memorării manuale a factorilor de multiplicare.</p>
+    </div>
+
+    <footer>
+        <p>© 2026 UniCalc Pro. Toate drepturile rezervate.</p>
+        <p><a href="index.html">Acasă</a> | <a href="politica-de-confidentialitate.html">Confidențialitate</a></p>
+    </footer>
+
+    <script>
+        function convertesteDistanta() {
+            var val = parseFloat(document.getElementById('valoareDist').value);
+            var din = document.getElementById('dinUnitate').value;
+            var la = document.getElementById('inUnitate').value;
+
+            if(isNaN(val)) {
+                document.getElementById('rezultatDist').innerHTML = "Introduceți o valoare numerică!";
+                return;
+            }
+
+            // Convertim totul în metri ca bază standard
+            var inMetri = val;
+            if(din === 'km') inMetri = val * 1000;
+            else if(din === 'cm') inMetri = val / 100;
+            else if(din === 'inch') inMetri = val * 0.0254;
+
+            // Convertim din metri în unitatea finală
+            var final = inMetri;
+            if(la === 'km') final = inMetri / 1000;
+            else if(la === 'cm') final = inMetri * 100;
+            else if(la === 'inch') final = inMetri / 0.0254;
+
+            document.getElementById('rezultatDist').innerHTML = val + " " + din + " = " + final.toFixed(4) + " " + la;
+        }
+    </script>
+</body>
+</html>
