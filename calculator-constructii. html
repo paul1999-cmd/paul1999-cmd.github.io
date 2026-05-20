@@ -33,7 +33,7 @@
 
     <div class="content-section">
         <h2>Cum se calculează volumul de materiale pentru șantier?</h2>
-        <p>Planificarea corectă a materialelor de construcție este primul pas pentru un șantier de succes și pentru evitarea pierderilor financiare. Fie că torni o alee, o fundație sau o placă de beton, este esențial să știi cu exactitate volumul total de ciment exprimat în metri cubi ($m^3$).</p>
+        <p>Planificarea corectă a materialelor de construcție este primul pas pentru un șantier de succes și pentru evitarea pierderilor financiare. Fie că torni o alee, o fundație sau o placă de beton, este esențial să știi cu exactitate volumul total de ciment exprimat în metri cubi (m³).</p>
         <p>Formula aplicată este simplă: se înmulțește lungimea cu lățimea pentru a afla suprafața în metri pătrați, iar rezultatul se înmulțește cu grosimea (transformată din centimetri în metri). Acest instrument digital calculează instant volumul total necesar și adaugă automat o marjă standard de 10% pentru pierderi, asigurându-te că nu vei rămâne fără materiale în mijlocul lucrării.</p>
     </div>
 
@@ -54,7 +54,7 @@
             }
 
             var volumNet = L * l * (g / 100);
-            var volumCuPierderi = volumNet * 1.1; // +10% marjă de siguranță
+            var volumCuPierderi = volumNet * 1.1;
 
             document.getElementById('rezultatBeton').innerHTML = "Volum necesar pur: " + volumNet.toFixed(2) + " m³<br>Recomandat (cu 10% pierderi): " + volumCuPierderi.toFixed(2) + " m³";
         }
