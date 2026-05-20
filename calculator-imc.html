@@ -1,31 +1,79 @@
-
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-<meta charset="UTF-8">
-<title>Calculator IMC</title>
-<meta name="description" content="Calculator simplu IMC.">
-<style>
-body{font-family:Arial;margin:40px;background:#f4f4f4}
-.box{background:white;padding:20px;border-radius:10px;max-width:700px;margin:auto;box-shadow:0 0 10px rgba(0,0,0,0.1)}
-input,button{padding:8px;margin-top:5px}
-.result{margin-top:10px;font-weight:bold}
-a{display:block;margin-top:10px}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator IMC (Indice Masă Corporală) | UniCalc Pro</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f4f6f9; padding: 20px; color: #333; }
+        .calc-box { background: white; padding: 30px; max-width: 500px; margin: 20px auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        h1, h2 { color: #2f855a; text-align: center; }
+        input, button { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { background-color: #2f855a; color: white; font-weight: bold; cursor: pointer; border: none; }
+        button:hover { background-color: #22543d; }
+        .result { background: #e2e8f0; padding: 15px; border-radius: 4px; margin-top: 15px; font-weight: bold; }
+        .content-section { max-width: 800px; margin: 40px auto; background: white; padding: 30px; border-radius: 8px; line-height: 1.6; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .content-section h2 { text-align: left; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        footer { text-align: center; margin-top: 40px; padding: 20px; font-size: 14px; border-top: 1px solid #ddd; }
+        footer a { color: #2f855a; text-decoration: none; margin: 0 10px; }
+    </style>
 </head>
 <body>
-<div class="box">
-<h1>Calculator IMC</h1>
-<p>Calculator simplu IMC.</p>
-<input id="val" type="number" placeholder="Introdu valoare">
-<button onclick="calc()">Calculează</button>
-<div class="result" id="rez"></div>
-</div>
 
-<script>
-function calc(){
-let v=document.getElementById("val").value; document.getElementById("rez").innerHTML="IMC estimat: "+(v/2).toFixed(2);
-}
-</script>
+    <div class="calc-box">
+        <h1>Calculator IMC</h1>
+        <label>Greutate (kg):</label>
+        <input type="number" id="greutate" placeholder="Ex: 75">
+        <label>Înălțime (cm):</label>
+        <input type="number" id="inaltime" placeholder="Ex: 175">
+        <button onclick="calculeazaIMC()">Calculează IMC</button>
+        <div class="result" id="rezultatIMC">Indicele tău va apărea aici.</div>
+    </div>
+
+    <div class="content-section">
+        <h2>Ce este Indicele de Masă Corporală (IMC) și cum se interpretează?</h2>
+        <p>Indicele de Masă Corporală (IMC sau BMI în limba engleză) este un indicator statistic oficial utilizat la nivel mondial pentru evaluarea greutății corporale în raport cu înălțimea unei persoane adulte. Acesta oferă o metodă rapidă de a identifica dacă o persoană se încadrează în limitele unei greutăți sănătoase sau dacă prezintă riscuri asociate cu subponderabilitatea, supraponderabilitatea sau obezitatea.</p>
+        <p>Calculul matematic pentru stabilirea IMC este simplu: greutatea exprimată în kilograme se împarte la pătratul înălțimii exprimate în metri. Rezultatul obținut este apoi încadrat în categoriile standard stabilite de Organizația Mondială a Sănătății (OMS):</p>
+        <ul>
+            <li><strong>Sub 18.5:</strong> Subponderal (greutate prea mică pentru înălțimea curentă)</li>
+            <li><strong>Între 18.5 și 24.9:</strong> Greutate normală (intervalul ideal și cel mai sănătos)</li>
+            <li><strong>Între 25.0 și 29.9:</strong> Supraponderal (tendință de îngrășare)</li>
+            <li><strong>Peste 30.0:</strong> Obezitate (necesită atenție medicală și schimbări în stilul de viață)</li>
+        </ul>
+        <p>Deși IMC este un instrument de screening excelent și rapid, el nu măsoară în mod direct procentul de grăsime corporală sau masa musculară, motiv pentru care sportivii pot avea uneori un scor ridicat fără a fi cu adevărat supraponderali.</p>
+    </div>
+
+    <footer>
+        <p>© 2026 UniCalc Pro. Toate drepturile rezervate.</p>
+        <p>
+            <a href="index.html">Acasă</a> | 
+            <a href="politica-de-confidentialitate.html">Politică de Confidențialitate</a> | 
+            <a href="calculator-salariu-net.html">Ghid Salarii</a> | 
+            <a href="calculator-combustibil.html">Consum Auto</a>
+        </p>
+    </footer>
+
+    <script>
+        function calculeazaIMC() {
+            var kg = parseFloat(document.getElementById('greutate').value);
+            var cm = parseFloat(document.getElementById('inaltime').value);
+            
+            if(isNaN(kg) || isNaN(cm) || kg <= 0 || cm <= 0) {
+                document.getElementById('rezultatIMC').innerHTML = "Introduceți date valide!";
+                return;
+            }
+            
+            var m = cm / 100;
+            var imc = kg / (m * m);
+            var status = "";
+            
+            if(imc < 18.5) status = "Subponderal";
+            else if(imc >= 18.5 && imc < 24.9) status = "Greutate Normală";
+            else if(imc >= 25 && imc < 29.9) status = "Supraponderal";
+            else status = "Obezitate";
+            
+            document.getElementById('rezultatIMC').innerHTML = "IMC: " + imc.toFixed(1) + " (" + status + ")";
+        }
+    </script>
 </body>
 </html>
