@@ -1,31 +1,70 @@
-
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-<meta charset="UTF-8">
-<title>Calculator cost combustibil</title>
-<meta name="description" content="Calculează costul combustibilului pentru o distanță.">
-<style>
-body{font-family:Arial;margin:40px;background:#f4f4f4}
-.box{background:white;padding:20px;border-radius:10px;max-width:700px;margin:auto;box-shadow:0 0 10px rgba(0,0,0,0.1)}
-input,button{padding:8px;margin-top:5px}
-.result{margin-top:10px;font-weight:bold}
-a{display:block;margin-top:10px}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Consum Combustibil | UniCalc Pro</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f4f6f9; padding: 20px; color: #333; }
+        .calc-box { background: white; padding: 30px; max-width: 500px; margin: 20px auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        h1, h2 { color: #2b6cb0; text-align: center; }
+        input, button { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { background-color: #2b6cb0; color: white; font-weight: bold; cursor: pointer; border: none; }
+        button:hover { background-color: #2c5282; }
+        .result { background: #e2e8f0; padding: 15px; border-radius: 4px; margin-top: 15px; font-weight: bold; }
+        .content-section { max-width: 800px; margin: 40px auto; background: white; padding: 30px; border-radius: 8px; line-height: 1.6; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .content-section h2 { text-align: left; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        footer { text-align: center; margin-top: 40px; padding: 20px; font-size: 14px; border-top: 1px solid #ddd; }
+        footer a { color: #2b6cb0; text-decoration: none; margin: 0 10px; }
+    </style>
 </head>
 <body>
-<div class="box">
-<h1>Calculator cost combustibil</h1>
-<p>Calculează costul combustibilului pentru o distanță.</p>
-<input id="val" type="number" placeholder="Introdu valoare">
-<button onclick="calc()">Calculează</button>
-<div class="result" id="rez"></div>
-</div>
 
-<script>
-function calc(){
-let v=document.getElementById("val").value; document.getElementById("rez").innerHTML="Cost estimat: "+(v*0.15).toFixed(2);
-}
-</script>
+    <div class="calc-box">
+        <h1>Calculator Consum Auto</h1>
+        <label>Distanța de parcurs (km):</label>
+        <input type="number" id="distanta" placeholder="Ex: 350">
+        <label>Consum mediu (litri/100km):</label>
+        <input type="number" id="consum" placeholder="Ex: 6.5" step="0.1">
+        <label>Preț combustibil per litru (RON):</label>
+        <input type="number" id="pret" placeholder="Ex: 7.20" step="0.01">
+        <button onclick="calculeazaConsum()">Calculează Costul</button>
+        <div class="result" id="rezultatCombustibil">Rezultatul va apărea aici.</div>
+    </div>
+
+    <div class="content-section">
+        <h2>Cum funcționează un calculator de consum și preț pentru combustibil?</h2>
+        <p>Planificarea unei călătorii auto implică calcularea precisă a costurilor pentru combustibil (benzină, motorină sau GPL). Acest calculator online este conceput pentru a simplifica acest proces, oferind șoferilor o estimare rapidă a bugetului necesar pentru deplasare.</p>
+        <p>Formula de bază utilizată pentru calcularea consumului total de combustibil este următoarea: se înmulțește distanța totală parcursă (exprimată în kilometri) cu media consumului specificat de producător sau înregistrat de computerul de bord al mașinii (litri la 100 de kilometri), totul împărțit la 100. Pentru a afla costul total al călătoriei, volumul total de litri rezultat se înmulțește cu prețul curent per litru de la stațiile de alimentare.</p>
+        <p>Prin utilizarea regulată a unui instrument de calcul, poți optimiza rutele alese și poți adopta un stil de condus mai economic, monitorizând eficient cheltuielile auto lunare sau împărțind corect costurile de transport cu ceilalți pasageri din autovehicul.</p>
+    </div>
+
+    <footer>
+        <p>© 2026 UniCalc Pro. Toate drepturile rezervate.</p>
+        <p>
+            <a href="index.html">Acasă</a> | 
+            <a href="politica-de-confidentialitate.html">Politică de Confidențialitate</a> | 
+            <a href="calculator-salariu-net.html">Ghid Salarii</a> | 
+            <a href="calculator-imc.html">Ghid IMC Sănătate</a>
+        </p>
+    </footer>
+
+    <script>
+        function calculeazaConsum() {
+            var distanta = parseFloat(document.getElementById('distanta').value);
+            var consum = parseFloat(document.getElementById('consum').value);
+            var pret = parseFloat(document.getElementById('pret').value);
+            
+            if(isNaN(distanta) || isNaN(consum) || isNaN(pret) || distanta <= 0 || consum <= 0 || pret <= 0) {
+                document.getElementById('rezultatCombustibil').innerHTML = "Introduceți valori valide!";
+                return;
+            }
+            
+            var litriNecesari = (distanta * consum) / 100;
+            var costTotal = litriNecesari * pret;
+            
+            document.getElementById('rezultatCombustibil').innerHTML = "Combustibil necesar: " + litriNecesari.toFixed(2) + " Litri<br>Cost Total: " + costTotal.toFixed(2) + " RON";
+        }
+    </script>
 </body>
 </html>
