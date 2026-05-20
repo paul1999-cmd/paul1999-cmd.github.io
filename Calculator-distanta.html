@@ -43,7 +43,7 @@
 
     <div class="content-section">
         <h2>Sistemul metric versus sistemul imperial de măsură</h2>
-        <p>Conversia unităților de distanță este indispensabilă în inginerie, navigație, proiecte de design sau pur și simplu atunci când citim rețete și ghiduri internaționale. În timp ce majoritatea globului folosește sistemul metric bazat pe metri și kilometri, anumite industrii sau regiuni folosesc exclusiv unități imperiale precum inchi (țoli), picioare sau mile.</p>
+        <p>Conversia unităților de distanță este indispensabilă în inginerie, navigație, proiecte de design sau pur și simplu atunci când citim ghiduri internaționale. În timp ce majoritatea globului folosește sistemul metric bazat pe metri și kilometri, anumite rețele folosesc exclusiv unități imperiale precum inchi (țoli), picioare sau mile.</p>
         <p>Acest convertor rapid efectuează calculele cu precizie matematică ridicată, asigurând o transformare corectă a metricilor, eliminând necesitatea memorării manuale a factorilor de multiplicare.</p>
     </div>
 
@@ -63,13 +63,11 @@
                 return;
             }
 
-            // Convertim totul în metri ca bază standard
             var inMetri = val;
             if(din === 'km') inMetri = val * 1000;
             else if(din === 'cm') inMetri = val / 100;
             else if(din === 'inch') inMetri = val * 0.0254;
 
-            // Convertim din metri în unitatea finală
             var final = inMetri;
             if(la === 'km') final = inMetri / 1000;
             else if(la === 'cm') final = inMetri * 100;
