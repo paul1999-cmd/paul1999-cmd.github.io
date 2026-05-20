@@ -42,7 +42,7 @@
     <div class="content-section">
         <h2>De ce este importantă precizia în conversia maselor?</h2>
         <p>Greutatea sau masa este o unitate de măsură fundamentală în comerțul internațional, în transportul aerian, logistică dar și în fitness și nutriție. Când comandăm bunuri de pe platforme internaționale sau când pregătim preparate culinare, ne lovim frecvent de sistemul britanic/american exprimat în livre (pounds - lbs).</p>
-        <p>Aplicația noastră face transformarea instantanee între kilograme, grame și livre folosind coeficienți preciși aprobați la nivel internațional, reducând riscul erorilor în rețete sau în procesele de expediție cargo.</p>
+        <p>Aplicația noastră face transformarea instantanee între kilograme, grame și livre folosind coeficienți preciși aprobați la nivel internațional, reducând riscul erorilor în rețete.</p>
     </div>
 
     <footer>
@@ -61,12 +61,10 @@
                 return;
             }
 
-            // Convertim în grame ca bază standard
             var inGrame = val;
             if(din === 'kg') inGrame = val * 1000;
             else if(din === 'lbs') inGrame = val * 453.59237;
 
-            // Convertim din grame în unitatea țintă
             var final = inGrame;
             if(la === 'kg') final = inGrame / 1000;
             else if(la === 'lbs') final = inGrame / 453.59237;
